@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.xiaoqiang.demo.ContinueSlideScrollView
+        android:id="@+id/mScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/mTv"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:background="#fbb"
+                android:gravity="center"
+                android:text="第\n一\n页\n面\n"
+                android:textColor="#333"
+                android:textSize="30dp" />
+
+            <TextView
+                android:background="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/mTv"
+                android:gravity="center"
+                android:text="↑↑↑继续上拉前往详情" />
+        </RelativeLayout>
+
+    </com.xiaoqiang.demo.ContinueSlideScrollView>
+
+
+</FrameLayout>
