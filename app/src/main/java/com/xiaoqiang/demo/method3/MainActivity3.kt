@@ -36,8 +36,8 @@ class MainActivity3 : FragmentActivity() {
             mFragments?.add(MainFragment2())
         }
 
-        mViewPager.offscreenPageLimit = 12
         mViewPager.adapter = AdapterFragment(supportFragmentManager, mFragments!!)
+        mViewPager.offscreenPageLimit = mFragments.size
 
     }
 
