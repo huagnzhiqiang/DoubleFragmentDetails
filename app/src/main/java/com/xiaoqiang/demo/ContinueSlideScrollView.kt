@@ -51,6 +51,11 @@ class ContinueSlideScrollView : ScrollView {
 
     override fun onOverScrolled(scrollX : Int, scrollY : Int, clampedX : Boolean, clampedY : Boolean) {
         super.onOverScrolled(scrollX, scrollY, clampedX, clampedY)
+
+        Log.e("hzq", "scrollY-->$scrollY")
+        Log.e("hzq", "clampedY-->$clampedY")
+
+
         if (scrollY == 0) {
             isScrolledToTop = clampedY
             isScrolledToBottom = false
@@ -138,11 +143,19 @@ class ContinueSlideScrollView : ScrollView {
                     Log.e("hzq", "onTouchEvent: 回到顶部，继续滑动" + (move - down))
                 }
 
+
                 if (isExecute && isScrolledToBottom() && move - down < - dp2px(context, TRIGGER_DISTANCE)) {
                     isExecute = false
                     mOnBottomCall?.invoke()
                     Log.e("hzq", "onTouchEvent: 已经到底，继续滑动" + (move - down))
                 }
+
+                //如果第一屏只有一页的话需用使用这个方法
+//                if (isExecute && move - down < - dp2px(context, TRIGGER_DISTANCE)) {
+//                    isExecute = false
+//                    mOnBottomCall?.invoke()
+//                    Log.e("hzq", "onTouchEvent: 已经到底，继续滑动" + (move - down))
+//                }
             }
 
             //抬起
